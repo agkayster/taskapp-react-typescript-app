@@ -1,0 +1,189 @@
+/* Styling for the form*/
+.input {
+	display: flex;
+	/* width: 90%; */ /* initial styling*/
+	width: 95%;
+	position: relative;
+	align-items: center;
+}
+
+/* styling for the Input element */
+.input__box {
+	width: 100%;
+	border-radius: 50px;
+	padding: 20px 30px;
+	font-size: 25px;
+	border: none;
+	transition: 0.2s;
+	box-shadow: inset 0 0 5px black; /* inset means inside the box*/
+}
+
+/* styling for when you focus on the input element*/
+.input__box:focus {
+	box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.5); /* box shadow outside the box when we focus on the box*/
+	outline: none;
+}
+
+/* styling for the submit button*/
+.input_submit {
+	position: absolute; /* positions the button element inside the form element (which is the parent element) */
+	width: 50px;
+	height: 50px;
+	margin: 12px;
+	border-radius: 50px;
+	right: 0px; /* right is 0, which is the extreme right hand-side of the form */
+	border: none;
+	font-size: 15px;
+	background-color: #2f74c0;
+	color: white;
+	transition: 0.2s all;
+	box-shadow: 0 0 10px black; /* implements the shadow on the button */
+}
+
+.input_submit:hover {
+	background-color: #388ae2;
+}
+
+/* :active here means when we click on the button*/
+.input_submit:active {
+	transform: scale(
+		0.8
+	); /* transformation method transforms an element to something else other than it's original state. so when we click on the button the scale here is  0.8, hence we reduce the size of the button by 0.8 when we click on it*/
+	box-shadow: 0 0 5px black;
+}
+
+/* Styling our container from TodosList*/
+.container {
+	display: flex;
+	width: 95%;
+	margin-top: 10px;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+/* initial style for our todos elements from TodosList */
+/* .todos {
+	display: flex;
+	justify-content: space-evenly;
+	width: 90%;
+	flex-wrap: wrap;
+} */
+
+/* final styling for our todos elements from TodosList because of drag and drop */
+.todos {
+	display: flex;
+	width: 47.5%;
+	flex-direction: column;
+	padding: 15px;
+	border-radius: 5px;
+	background-color: rgba(50, 195, 205);
+}
+
+/* styling for todos__heading from TodosList */
+.todos__heading {
+	font-size: 30px;
+	color: white;
+}
+
+/* styling for background color for completed tasks in TodosList */
+.remove {
+	background-color: rgb(235, 103, 80);
+}
+
+/* initial styling for single todos form component*/
+/* .todos__single {
+	display: flex;
+	width: 29.5%;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 15px;
+	background-image: url('https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg');
+} */
+
+/* final styling for single todos form component to implement drag and drop */
+.todos__single {
+	display: flex;
+	border-radius: 5px;
+	padding: 20px;
+	margin-top: 15px;
+	background-image: url('https://img.freepik.com/free-photo/crumpled-yellow-paper-background-close-up_60487-2390.jpg?size=626&ext=jpg');
+	transition: 0.2s; /* transition works with transform in the hover action below*/
+}
+
+/* hover styles for single todos form component */
+.todos__single:hover {
+	box-shadow: 0 0 5px black;
+	transform: scale(
+		1.03
+	); /* here we scale up, so the element grows bigger. time to scale and go back to size comes from transition above */
+}
+
+/* styling for single todos text*/
+.todos__single--text {
+	flex: 1;
+	padding: 5px;
+	border: none;
+	font-size: 20px;
+}
+
+/* :focus is when we make it an input box for editing*/
+.todos__single--text:focus {
+	outline: none;
+}
+
+/* styling react icons*/
+.icon {
+	margin-left: 10px;
+	font-size: 25px;
+	cursor: pointer;
+}
+
+/* media query for Single todo component*/
+/* @media (max-width: 1200px) { // initial styling before implementing drag and drop //
+	.todos__single {
+		width: 40%;
+	}
+} */
+
+/* styling for while dragging from Active from TodosList component */
+.dragactive {
+	background-color: rgb(0, 221, 236);
+}
+
+/* styling for while dropping in complete from TodosList component*/
+.dragcomplete {
+	background-color: rgb(255, 38, 0);
+}
+
+/* styling for draggable single todo while dragging it from SingleTodo component */
+.drag {
+	box-shadow: 0 0 20px black;
+}
+
+@media (max-width: 1100px) {
+	.todos {
+		width: 45%;
+	}
+}
+
+@media (max-width: 700px) {
+	.input {
+		width: 95%;
+	}
+	/* .todos { // initial styling before drag and drop implementation //
+		width: 95%;
+	} */
+
+	.todos {
+		width: 90%;
+		margin-bottom: 10px; /* when we start implementing drag and drop*/
+	}
+	/* .todos__single { // remove this when we start implementing drag and drop //
+		width: 100%;
+	} */
+
+	.container {
+		width: 95%;
+		flex-direction: column;
+	}
+}
