@@ -24,7 +24,7 @@ const TodosList: React.FC<PropsInterface> = ({
 				{(provided, snapshot) => (
 					<div
 						className={`todos ${
-							snapshot.isDraggingOver ? 'dragctive' : ''
+							snapshot.isDraggingOver ? 'dragactive' : ''
 						}`}
 						ref={provided.innerRef}
 						{...provided.droppableProps}>
